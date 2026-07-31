@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/winezer0/ripgrep/pkg/printer"
+	"github.com/winezer0/gogrep/pkg/printer"
 )
 
 // SearchFile 搜索普通文件；启用 SearchZip 时也支持 gzip、bzip2 和 zip。

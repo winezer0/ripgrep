@@ -7,8 +7,8 @@ import (
 	"context"
 	"io"
 
-	"github.com/winezer0/ripgrep/pkg/matcher"
-	"github.com/winezer0/ripgrep/pkg/printer"
+	"github.com/winezer0/gogrep/pkg/matcher"
+	"github.com/winezer0/gogrep/pkg/printer"
 )
 
 const maxLineLength = 10 * 1024 * 1024

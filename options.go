@@ -1,6 +1,6 @@
-package ripgrep
+package gogrep
 
-import "github.com/winezer0/ripgrep/pkg/printer"
+import "github.com/winezer0/gogrep/pkg/printer"
 
 // Options 配置一次目录或文件搜索。
 type Options struct {

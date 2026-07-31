@@ -12,8 +12,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/winezer0/ripgrep/pkg/matcher"
-	"github.com/winezer0/ripgrep/pkg/printer"
+	"github.com/winezer0/gogrep/pkg/matcher"
+	"github.com/winezer0/gogrep/pkg/printer"
 )
 
 func TestSearchReader(t *testing.T) {

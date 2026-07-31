@@ -1,4 +1,4 @@
-// Package app 提供 ripgrep 命令行程序实现。
+// Package app 提供 gogrep 命令行程序实现。
 package app
 
 import (
@@ -10,16 +10,16 @@ import (
 	"strings"
 	"time"
 
-	"github.com/winezer0/ripgrep"
-	"github.com/winezer0/ripgrep/pkg/ignore"
-	"github.com/winezer0/ripgrep/pkg/matcher"
-	"github.com/winezer0/ripgrep/pkg/printer"
-	"github.com/winezer0/ripgrep/pkg/searcher"
+	"github.com/winezer0/gogrep"
+	"github.com/winezer0/gogrep/pkg/ignore"
+	"github.com/winezer0/gogrep/pkg/matcher"
+	"github.com/winezer0/gogrep/pkg/printer"
+	"github.com/winezer0/gogrep/pkg/searcher"
 )
 
 const version = "0.1.0"
 
-// Run 执行 CLI；参数为命令行参数及标准流，返回 ripgrep 兼容退出码。
+// Run 执行 CLI；参数为命令行参数及标准流，返回 gogrep 兼容退出码。
 func Run(args []string, stdin io.Reader, stdout, stderr io.Writer) int {
 	cli, err := parseArgs(args)
 	if err != nil {
@@ -29,13 +29,13 @@ func Run(args []string, stdin io.Reader, stdout, stderr io.Writer) int {
 		return writeText(stdout, helpMessage)
 	}
 	if cli.Version {
-		return writeText(stdout, "ripgrep "+version+"\n")
+		return writeText(stdout, "gogrep "+version+"\n")
 	}
 	if cli.TypeList {
 		return printTypes(stdout)
 	}
 	if cli.Pattern == "" {
-		return errorExit(stderr, fmt.Errorf("PATTERN is required; see 'ripgrep --help'"))
+		return errorExit(stderr, fmt.Errorf("PATTERN is required; see 'gogrep --help'"))
 	}
 	if useStdin(cli.Paths, stdin) {
 		return runStdin(cli, stdin, stdout, stderr)
@@ -47,7 +47,7 @@ func Run(args []string, stdin io.Reader, stdout, stderr io.Writer) int {
 }
 
 func runPaths(cli *cliArgs, stdout, stderr io.Writer) int {
-	results, err := ripgrep.Search(context.Background(), cli.Paths, cli.options())
+	results, err := gogrep.Search(context.Background(), cli.Paths, cli.options())
 	if err != nil {
 		return errorExit(stderr, err)
 	}
@@ -72,10 +72,10 @@ func runStdin(cli *cliArgs, stdin io.Reader, stdout, stderr io.Writer) int {
 	if err := joinErrors(searchErr, closeErr); err != nil {
 		return errorExit(stderr, err)
 	}
-	return printResults(cli, []ripgrep.FileResult{*result}, stdout, stderr)
+	return printResults(cli, []gogrep.FileResult{*result}, stdout, stderr)
 }
 
-func printResults(cli *cliArgs, results []ripgrep.FileResult, stdout, stderr io.Writer) int {
+func printResults(cli *cliArgs, results []gogrep.FileResult, stdout, stderr io.Writer) int {
 	totalMatches := 0
 	totalLines := 0
 	var elapsed time.Duration

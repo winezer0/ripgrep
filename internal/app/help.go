@@ -1,9 +1,9 @@
 package app
 
-const helpMessage = `ripgrep recursively searches files with PCRE2 patterns.
+const helpMessage = `gogrep recursively searches files with PCRE2 patterns.
 
 USAGE:
-    ripgrep [OPTIONS] PATTERN [PATH...]
+    gogrep [OPTIONS] PATTERN [PATH...]
 
 OPTIONS:
     -i, --ignore-case          Search case insensitively.

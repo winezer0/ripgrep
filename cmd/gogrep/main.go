@@ -4,7 +4,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/winezer0/ripgrep/internal/app"
+	"github.com/winezer0/gogrep/internal/app"
 )
 
 func main() {

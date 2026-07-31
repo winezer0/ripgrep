@@ -195,7 +195,7 @@ func (gs *GlobSet) MatchPath(path string) (matched bool, isIgnored bool) {
 	return gs.Match(path)
 }
 
-// MatchGlobFilter 按 ripgrep 的 -g/--glob 规则判断文件是否应排除。
+// MatchGlobFilter 按 gogrep 的 -g/--glob 规则判断文件是否应排除。
 // 1. If there are negated globs (starting with '!') and the path matches one, it is ignored (returns true).
 // 2. If there are positive globs:
 //   - If the path matches a positive glob, it is NOT ignored (returns false).

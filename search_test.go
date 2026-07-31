@@ -1,4 +1,4 @@
-package ripgrep
+package gogrep
 
 import (
 	"context"

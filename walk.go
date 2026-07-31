@@ -1,4 +1,4 @@
-package ripgrep
+package gogrep
 
 import (
 	"os"
@@ -6,8 +6,8 @@ import (
 	"sort"
 	"strings"
 
-	ignore "github.com/winezer0/gitignore"
-	typefilter "github.com/winezer0/ripgrep/pkg/ignore"
+	typefilter "github.com/winezer0/gogrep/pkg/ignore"
+	ignore "github.com/winezer0/goignore"
 )
 
 type walker struct {

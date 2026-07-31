@@ -1,4 +1,4 @@
-package ripgrep
+package gogrep
 
 import (
 	"context"
@@ -9,10 +9,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/winezer0/ripgrep/pkg/globset"
-	"github.com/winezer0/ripgrep/pkg/ignore"
-	"github.com/winezer0/ripgrep/pkg/matcher"
-	"github.com/winezer0/ripgrep/pkg/searcher"
+	"github.com/winezer0/gogrep/pkg/globset"
+	"github.com/winezer0/gogrep/pkg/ignore"
+	"github.com/winezer0/gogrep/pkg/matcher"
+	"github.com/winezer0/gogrep/pkg/searcher"
 )
 
 type pipeline struct {

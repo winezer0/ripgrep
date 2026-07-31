@@ -1,8 +1,8 @@
 package searcher
 
 import (
-	"github.com/winezer0/ripgrep/pkg/matcher"
-	"github.com/winezer0/ripgrep/pkg/printer"
+	"github.com/winezer0/gogrep/pkg/matcher"
+	"github.com/winezer0/gogrep/pkg/printer"
 )
 
 type bufferedLine struct {

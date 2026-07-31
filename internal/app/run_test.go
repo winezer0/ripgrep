@@ -47,8 +47,8 @@ func TestRunGeneralOptions(t *testing.T) {
 		wantCode   int
 		wantOutput string
 	}{
-		{name: "help", args: []string{"--help"}, wantCode: 0, wantOutput: "ripgrep recursively"},
-		{name: "version", args: []string{"--version"}, wantCode: 0, wantOutput: "ripgrep 0.1.0\n"},
+		{name: "help", args: []string{"--help"}, wantCode: 0, wantOutput: "gogrep recursively"},
+		{name: "version", args: []string{"--version"}, wantCode: 0, wantOutput: "gogrep 0.1.0\n"},
 		{name: "missing pattern", wantCode: 2},
 		{name: "unknown option", args: []string{"--unknown"}, wantCode: 2},
 		{name: "type list", args: []string{"--type-list"}, wantCode: 0, wantOutput: "go:"},

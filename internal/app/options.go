@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"strings"
 
-	ripgrep "github.com/winezer0/ripgrep"
-	"github.com/winezer0/ripgrep/pkg/printer"
+	gogrep "github.com/winezer0/gogrep"
+	"github.com/winezer0/gogrep/pkg/printer"
 )
 
 type cliArgs struct {
@@ -213,8 +213,8 @@ func optionValue(name, inline string, hasInline bool, following []string) (strin
 	return following[0], 1, nil
 }
 
-func (c *cliArgs) options() ripgrep.Options {
-	return ripgrep.Options{
+func (c *cliArgs) options() gogrep.Options {
+	return gogrep.Options{
 		Pattern: c.Pattern, FixedStrings: c.FixedStrings, CaseInsensitive: c.CaseInsensitive,
 		WordRegexp: c.WordRegexp, InvertMatch: c.InvertMatch, Replace: c.Replace,
 		HasReplace: c.HasReplace, NoIgnore: c.NoIgnore, Hidden: c.Hidden,
